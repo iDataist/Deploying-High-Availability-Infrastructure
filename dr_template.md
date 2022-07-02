@@ -1,21 +1,38 @@
 # Infrastructure
 
 ## AWS Zones
-Identify your zones here
+us-east-2 and us-west-2
 
 ## Servers and Clusters
 
 ### Table 1.1 Summary
-| Asset      | Purpose           | Size                                                                   | Qty                                                             | DR                                                                                                           |
-|------------|-------------------|------------------------------------------------------------------------|-----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| Asset name | Brief description | AWS size eg. t3.micro (if applicable, not all assets will have a size) | Number of nodes/replicas or just how many of a particular asset | Identify if this asset is deployed to DR, replicated, created in multiple locations or just stored elsewhere |
+| EC2 instance           | Running the app                             | t3.medium | 1 |                                                                     |
+|------------------------|---------------------------------------------|-----------|---|---------------------------------------------------------------------|
+| SSH keys               | Administering the EC2 instances             |           | 1 |                                                                     |
+| GitHub repo            | Storing the code                            |           | 1 |                                                                     |
+| RDS cluster            | Backend database                            | 1 node    | 1 | Have a replicated database and perform a failover on the database.  |
+| Load balancer          | Improve monitoring stack availability       |           | 1 |                                                                     |
+| Kubernetes cluster     | Monitoring stack                            | 1 node    | 1 |                                                                     |
+| Grafana and Prometheus | Monitoring platform                         |           | 1 |                                                                     |
+| VPC                    | Launch AWS resources into a virtual network |           | 1 |                                                                     |
+| S3                     | Storing terraform data                      |           | 1 |                                                                     |
 
 ### Descriptions
-More detailed descriptions of each asset identified above.
+- 1 EC2 instances running the app
+- 1 SSH keys for administering the EC2 instances
+- 1 GitHub repo for storing the Terraform code
+- 1 backend database running on 1 Amazon RDS nodes for the app
+- 1 load balancer for the grafana stack
+- 1 Kubernetes cluster for monitoring stack
+- 1 monitoring platform (Grafana and Prometheus) for the app
+- 1 VPC to launch AWS resources in a private network
+- 1 S3 bucket to store the terraform data
+
 
 ## DR Plan
 ### Pre-Steps:
-List steps you would perform to setup the infrastructure in the other region. It doesn't have to be super detailed, but high-level should suffice.
+Ensure the infrastructure is set up and working in the DR site.
 
 ## Steps:
-You won't actually perform these steps, but write out what you would do to "fail-over" your application and database cluster to the other region. Think about all the pieces that were setup and how you would use those in the other region
+1. Create a cloud load balancer and point DNS to the load balancer. This way you can have multiple instances behind 1 IP in a region. During a failover scenario, you would fail over the single DNS entry at your DNS provider to point to the DR site. This is much more intelligent than pointing to a single instance of a web server.
+2. Have a replicated database and perform a failover on the database. While a backup is good and necessary, it is time-consuming to restore from backup. In this DR step, you would have already configured replication and would perform the database failover. Ideally, your application would be using a generic CNAME DNS record and would just connect to the DR instance of the database.
