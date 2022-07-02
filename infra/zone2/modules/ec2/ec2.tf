@@ -1,12 +1,22 @@
-resource "aws_instance" "linux" {
+# resource "aws_instance" "web" {
+#   ami           = var.aws_ami
+#   instance_type = "t3.micro"
+
+#   tags = {
+#     Name = "Web"
+#   }
+# }
+
+resource "aws_instance" "ubuntu" {
   ami           = var.aws_ami
   count = var.instance_count
-  instance_type = var.instance_type
+  instance_type = "t3.micro"
+  key_name = "udacity"
   subnet_id = var.public_subnet_ids[0]
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
   tags = {
-    Name = "linux-web"
+    Name = "Ubuntu-Web"
   }
 }
 
@@ -25,6 +35,13 @@ resource "aws_security_group" "ec2_sg" {
     description = "ssh port"
     from_port   = 22    
     to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    description = "monitoring"
+    from_port   = 9100    
+    to_port     = 9100
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }

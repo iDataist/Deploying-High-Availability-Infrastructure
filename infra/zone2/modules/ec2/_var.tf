@@ -9,7 +9,7 @@ variable "instance_count" {}
 
 variable "instance_type" {
    description = "EC2 instance type to use for the argo EC2 instances."
-   default     = "t2.micro"
+   default     = "t3.medium"
  }
 
 variable "tags" {

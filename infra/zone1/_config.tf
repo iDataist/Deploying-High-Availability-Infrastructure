@@ -1,6 +1,6 @@
 terraform {
    backend "s3" {
-     bucket = "udacity-tf-tscotto"
+     bucket = "terraform-tf-huiren"
      key    = "terraform/terraform.tfstate"
      region = "us-east-2"
    }
@@ -13,3 +13,8 @@ terraform {
      tags = local.tags
    }
  }
+
+ provider "aws" {
+  alias  = "usw2"
+  region = "us-west-2"
+}
