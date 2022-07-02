@@ -38,6 +38,6 @@ locals {
 #      "kubernetes.io/role/elb" = 1
 #    }
 #   providers = {
-#     aws = aws.usw1
+#     aws = aws.usw2
 #   }
 #  }
