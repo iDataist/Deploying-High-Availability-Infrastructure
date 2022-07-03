@@ -1,10 +1,8 @@
 # Deploying HA Infrastructure
 
-The first step in this project will be deploying infrastructure that you can run Prometheus and Grafana on. You will then use the servers you deployed to create an SLO/SLI dashboard. Next, you will modify existing infrastructure templates and deploy a highly-available infrastructure to AWS in multiple zones using Terrafrom. With this you will also deploy a RDS database cluster that has a replica in the alternate zone.
+In this project, I first deployed infrastructure to run Prometheus and Grafana on. I then created an SLO/SLI dashboard. Next, I modified existing infrastructure templates and deployed a highly-available infrastructure to AWS in multiple zones using Terrafrom. With this I also deployed a RDS database cluster that has a replica in the alternate zone.
 
 ## Getting Started
-
-Clone the appropriate git repo with the starter code. There will be 2 folders. Zone1 and zone2. This is where you will run the code from in your AWS Cloudshell terminal.
 
 ### Dependencies
 
@@ -19,10 +17,6 @@ Clone the appropriate git repo with the starter code. There will be 2 folders. Z
 ### Installation
 
 1. Open your AWS console and ensure it is set for region `us-east-1`. Open the CloudShell by clicking the little shell icon in the toolbar at the top near the search box. 
-
-<!-- 1. Set up your aws credentials from Udacity AWS Gateway locally
-    - https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
-    - Set your region to `us-east-1` -->
 
 2. Copy the AMI to your account
 
@@ -40,12 +34,12 @@ Clone the appropriate git repo with the starter code. There will be 2 folders. Z
 
     <!-- - Set your aws cli config to `us-east-2` -->
 
-3. Close your CloudShell. Change your region to `us-east-2`. From the AWS console create an S3 bucket in `us-east-2` called `udacity-tf-<your_name>` e.g `udacity-tf-tscotto`
+3. Close your CloudShell. Change your region to `us-east-2`. From the AWS console create an S3 bucket in `us-east-2` called `udacity-tf-<your_name>`
     - click next until created.
     - Update `_config.tf` in the `zone1` folder with your S3 bucket name where you will replace `<your_name>` with your name
     - **NOTE**: S3 bucket names MUST be globally unique!
 
-4. Change your region to `us-west-2`. From the AWS console create an S3 bucket in `us-west-2` called `udacity-tf-<your_name>-west` e.g `udacity-tf-tscotto`
+4. Change your region to `us-west-2`. From the AWS console create an S3 bucket in `us-west-2` called `udacity-tf-<your_name>-west`
     - click next until created.
     - Update `_config.tf` in the `zone2` folder with your S3 bucket name where you will replace `<your_name>` with your name
     - **NOTE**: S3 bucket names MUST be globally unique!
@@ -123,7 +117,6 @@ sudo systemctl restart nginx
 
     `helm install prometheus prometheus-community/kube-prometheus-stack -f "values.yaml" --namespace monitoring`
 
-<!-- `helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring` -->
 
 <!-- 10. Port forward
 `kubectl -n monitoring  port-forward svc/prometheus-grafana  8888:80`
