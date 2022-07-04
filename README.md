@@ -26,11 +26,11 @@ In this project, I first deployed infrastructure to run Prometheus and Grafana o
     aws ec2 create-restore-image-task --object-key ami-0ec6fdfb365e5fc00.bin --bucket udacity-srend --name "udacity-<your_name>"
     ```
     <!-- - Replace the owner field in `_data.tf` with your Amazon owner ID assigned on the AMI (you can get this in the console by going to EC2 - AMIs and selecting the Owned by me at the top filter) -->
-    - Take note of that AMI ID the script just output. Copy the AMI to `us-east-2` and `us-west-2`:
+    - Take note of that AMI ID the script just output. Copy the AMI to `us-east-2` and `us-west-1`:
         - `aws ec2 copy-image --source-image-id <your-ami-id-from-above> --source-region us-east-1 --region us-east-2 --name "udacity-<your_name>"`
-        - `aws ec2 copy-image --source-image-id <your-ami-id-from-above> --source-region us-east-1 --region us-west-2 --name "udacity-<your_name>"`
+        - `aws ec2 copy-image --source-image-id <your-ami-id-from-above> --source-region us-east-1 --region us-west-1 --name "udacity-<your_name>"`
 
-    - Make note of the ami output from the above 2 commands. You'll need to put this in the `ec2.tf` file for `zone1` for `us-east-2` and in `ec2.tf` file for `zone2` for `us-west-2` respectively
+    - Make note of the ami output from the above 2 commands. You'll need to put this in the `ec2.tf` file for `zone1` for `us-east-2` and in `ec2.tf` file for `zone2` for `us-west-1` respectively
 
     <!-- - Set your aws cli config to `us-east-2` -->
 
@@ -39,13 +39,13 @@ In this project, I first deployed infrastructure to run Prometheus and Grafana o
     - Update `_config.tf` in the `zone1` folder with your S3 bucket name where you will replace `<your_name>` with your name
     - **NOTE**: S3 bucket names MUST be globally unique!
 
-4. Change your region to `us-west-2`. From the AWS console create an S3 bucket in `us-west-2` called `udacity-tf-<your_name>-west`
+4. Change your region to `us-west-1`. From the AWS console create an S3 bucket in `us-west-1` called `udacity-tf-<your_name>-west`
     - click next until created.
     - Update `_config.tf` in the `zone2` folder with your S3 bucket name where you will replace `<your_name>` with your name
     - **NOTE**: S3 bucket names MUST be globally unique!
 
 5. Create a private key pair for your EC2 instances
-    - Do this in **BOTH** `us-east-2` and `us-west-2`
+    - Do this in **BOTH** `us-east-2` and `us-west-1`
     - Name the key `udacity`
 
 6. Setup your CloudShell. Open CloudShell in the `us-east-2` region. Install the following:
@@ -175,12 +175,12 @@ Login to Grafana with `admin` for the username and `prom-operator` for the passw
         <!-- - Each VM has 3 instances (EC2)
         - Each Kubernetes cluster has 2 nodes -->
         <!-- - The VPC has IPs in multiple availability zones.  -->
-        **Note for availability zones** that not all regions have the same number of availability zones. You will need to lookup the AZs for `us-west-2`. You will get errors when first running the code you will have to fix in the `zone1` `main.tf` file
+        **Note for availability zones** that not all regions have the same number of availability zones. You will need to lookup the AZs for `us-west-1`. You will get errors when first running the code you will have to fix in the `zone1` `main.tf` file
         - You will need to update the bucket name in the `_data.tf` file under the `zone2` folder to reflect the name of the bucket you provisioned in `us-east-2` earlier
         - For the application load balancer, please note the technical requirements:
             - This will attach to the Ubuntu VMs on port 80.
             - It should listen on port 80
-            - **HINT**: we actually provisioned the VPC for us-west-2 in the `zone1` folder, so you'll need to reference the subnet and vpc ID from that module output. Here is the code block you'll need to utilize for the ALB:
+            - **HINT**: we actually provisioned the VPC for us-west-1 in the `zone1` folder, so you'll need to reference the subnet and vpc ID from that module output. Here is the code block you'll need to utilize for the ALB:
             ```
             subnet_id = data.terraform_remote_state.vpc.outputs.public_subnet_ids
             vpc_id = data.terraform_remote_state.vpc.outputs.vpc_id

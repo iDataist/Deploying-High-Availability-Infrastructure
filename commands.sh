@@ -1,23 +1,23 @@
 # sed -i 's/us-east-2/us-east-2/g' _config.tf
 # find ./ -type f -exec sed -i -e 's/udacity-tf-tscotto/udacity-tf-huiren/g' {} \;
 
-aws ec2 describe-availability-zones --region us-east-2
+aws ec2 describe-availability-zones --region us-west-1
 
 
 aws ec2 create-restore-image-task --object-key ami-0ec6fdfb365e5fc00.bin --bucket udacity-srend --name "udacity-huiren"
 #ami-0a20d0481c46d5b4b
 aws ec2 copy-image --source-image-id ami-0a20d0481c46d5b4b --source-region us-east-1 --region us-east-2 --name "udacity-huiren"
 #ami-04752855828cc4af2
-aws ec2 copy-image --source-image-id ami-0a20d0481c46d5b4b --source-region us-east-1 --region us-west-2 --name "udacity-huiren"
+aws ec2 copy-image --source-image-id ami-0a20d0481c46d5b4b --source-region us-east-1 --region us-west-1 --name "udacity-huiren"
 #ami-0418070344eccebfc
 
 aws s3api create-bucket --bucket terraform-tf-huiren --region us-east-2 --create-bucket-configuration LocationConstraint=us-east-2
-aws s3api create-bucket --bucket udacity-tf-huiren-west --region us-west-2 --create-bucket-configuration LocationConstraint=us-west-2
+aws s3api create-bucket --bucket udacity-tf-huiren-west --region us-west-1 --create-bucket-configuration LocationConstraint=us-west-1
 aws s3 rm s3://udacity-tf-huiren --recursive
 aws s3api delete-bucket --bucket udacity-tf-huiren-west
 
 aws ec2 create-key-pair --key-name udacity --region us-east-2
-aws ec2 create-key-pair --key-name udacity --region us-west-2
+aws ec2 create-key-pair --key-name udacity --region us-west-1
 
 # helm
 export VERIFY_CHECKSUM=false
@@ -37,7 +37,7 @@ mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/
 echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 
 
-aws eks update-kubeconfig --name udacity-cluster --region us-west-2
+aws eks update-kubeconfig --name udacity-cluster --region us-west-1
 #Change kubernetes context to the new AWS cluster
 kubectl config current-context
 # kubectl config use-context docker-desktop

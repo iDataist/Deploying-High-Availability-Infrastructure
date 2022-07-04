@@ -130,7 +130,7 @@ Your configuration already matches the changes detected above. If you'd like to 
 │ Warning: Provider aws is undefined
 │ 
 │   on main.tf line 41, in module "vpc_west":
-│   41:     aws = aws.usw2
+│   41:     aws = aws.usw1
 │ 
 │ Module module.vpc_west does not declare a provider named aws.
 │ If you wish to specify a provider configuration for the module, add an entry for aws in the required_providers block within the module.

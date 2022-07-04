@@ -176,9 +176,9 @@ Terraform will perform the following actions:
       + apply_immediately               = (known after apply)
       + arn                             = (known after apply)
       + availability_zones              = [
-          + "us-west-2a",
-          + "us-west-2b",
-          + "us-west-2c",
+          + "us-west-1a",
+          + "us-west-1b",
+          + "us-west-1c",
         ]
       + backup_retention_period         = 5
       + cluster_identifier              = "udacity-db-cluster-s"
@@ -292,7 +292,7 @@ Plan: 3 to add, 0 to change, 0 to destroy.
 │ Warning: Provider aws is undefined
 │ 
 │   on main.tf line 41, in module "vpc_west":
-│   41:     aws = aws.usw2
+│   41:     aws = aws.usw1
 │ 
 │ Module module.vpc_west does not declare a provider named aws.
 │ If you wish to specify a provider configuration for the module, add an entry for aws in the required_providers block within the module.

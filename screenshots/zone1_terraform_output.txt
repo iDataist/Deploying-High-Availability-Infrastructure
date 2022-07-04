@@ -347,7 +347,7 @@ Terraform detected the following changes made outside of Terraform since the las
             },
         ]
         tags             = {
-            "Name" = "udacity-project-private-us-west-2b"
+            "Name" = "udacity-project-private-us-west-1b"
         }
         # (5 unchanged attributes hidden)
     }
@@ -373,7 +373,7 @@ Terraform detected the following changes made outside of Terraform since the las
             },
         ]
         tags             = {
-            "Name" = "udacity-project-private-us-west-2c"
+            "Name" = "udacity-project-private-us-west-1c"
         }
         # (5 unchanged attributes hidden)
     }
@@ -399,7 +399,7 @@ Terraform detected the following changes made outside of Terraform since the las
             },
         ]
         tags             = {
-            "Name" = "udacity-project-private-us-west-2a"
+            "Name" = "udacity-project-private-us-west-1a"
         }
         # (5 unchanged attributes hidden)
     }
@@ -408,10 +408,10 @@ Terraform detected the following changes made outside of Terraform since the las
       + association_id       = "eipassoc-0cfc08e460f6cc3cb"
         id                   = "eipalloc-0543a9fe929d28407"
       + network_interface    = "eni-060e0d3cef0d182bf"
-      + private_dns          = "ip-10-100-10-91.us-west-2.compute.internal"
+      + private_dns          = "ip-10-100-10-91.us-west-1.compute.internal"
       + private_ip           = "10.100.10.91"
         tags                 = {
-            "Name" = "udacity-project-us-west-2a"
+            "Name" = "udacity-project-us-west-1a"
         }
         # (8 unchanged attributes hidden)
     }
@@ -491,7 +491,7 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 │ Warning: Provider aws is undefined
 │ 
 │   on main.tf line 41, in module "vpc_west":
-│   41:     aws = aws.usw2
+│   41:     aws = aws.usw1
 │ 
 │ Module module.vpc_west does not declare a provider named aws.
 │ If you wish to specify a provider configuration for the module, add an entry for aws in the required_providers block within the module.

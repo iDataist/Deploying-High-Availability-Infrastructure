@@ -1,22 +1,22 @@
 # Infrastructure
 
 ## AWS Zones
-us-east-2 and us-west-2
+us-east-2 and us-west-1
 
 ## Servers and Clusters
 
 ### Table 1.1 Summary
 | Asset                     | Purpose                                     | Size     | Qty | HA                                                      | DR                                                                              |
 |---------------------------|---------------------------------------------|----------|-----|---------------------------------------------------------|---------------------------------------------------------------------------------|
-| EC2 instance              | Running the app                             | t3.micro | 1   | Increase the instance number from 1 to 3 in us-east-2   | Deploy 3 instances in us-west-2                                                 |
-| SSH keys                  | Administering the EC2 instances             |          | 1   |                                                         | Have a SSH key in us-west-2                                                     |
+| EC2 instance              | Running the app                             | t3.micro | 1   | Increase the instance number from 1 to 3 in us-east-2   | Deploy 3 instances in us-west-1                                                 |
+| SSH keys                  | Administering the EC2 instances             |          | 1   |                                                         | Have a SSH key in us-west-1                                                     |
 | GitHub repo               | Storing the code                            |          | 1   |                                                         |                                                                                 |
-| RDS cluster               | Backend database                            | 1 node   | 1   | Increase the node number from 1 to 2 in us-east-2       | Have a replicated database and perform a failover on the database in us-west-2  |
-| Network load balancer     | Improve monitoring stack availability       |          | 1   | Deploy in multi-AZs in us-east-2                        | Deploy in multi-AZs in us-west-2                                                |
-| Application load balancer | Improve app availability                    |          | 0   | Deploy in multi-AZs in us-east-2 and perform a failover | Deploy in multi-AZs in us-west-2 and perform a failover                         |
-| Kubernetes cluster        | Monitoring stack                            | 1 node   | 1   | Deploy in multi-AZs in us-east-2                        | Deploy in multi-AZs in us-west-2                                                |
+| RDS cluster               | Backend database                            | 1 node   | 1   | Increase the node number from 1 to 2 in us-east-2       | Have a replicated database and perform a failover on the database in us-west-1  |
+| Network load balancer     | Improve monitoring stack availability       |          | 1   | Deploy in multi-AZs in us-east-2                        | Deploy in multi-AZs in us-west-1                                                |
+| Application load balancer | Improve app availability                    |          | 0   | Deploy in multi-AZs in us-east-2 and perform a failover | Deploy in multi-AZs in us-west-1 and perform a failover                         |
+| Kubernetes cluster        | Monitoring stack                            | 1 node   | 1   | Deploy in multi-AZs in us-east-2                        | Deploy in multi-AZs in us-west-1                                                |
 | Grafana and Prometheus    | Monitoring platform                         |          | 1   |                                                         |                                                                                 |
-| VPC                       | Launch AWS resources into a virtual network |          | 1   | Deploy in multi-AZs in us-east-2                        | Deploy in multi-AZs in us-west-2                                                |
+| VPC                       | Launch AWS resources into a virtual network |          | 1   | Deploy in multi-AZs in us-east-2                        | Deploy in multi-AZs in us-west-1                                                |
 | S3                        | Storing terraform data                      |          | 1   |
 
 ### Descriptions
