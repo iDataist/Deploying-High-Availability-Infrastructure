@@ -9,7 +9,7 @@ aws ec2 create-restore-image-task --object-key ami-0ec6fdfb365e5fc00.bin --bucke
 aws ec2 copy-image --source-image-id ami-0a20d0481c46d5b4b --source-region us-east-1 --region us-east-2 --name "udacity-huiren"
 #ami-04752855828cc4af2
 aws ec2 copy-image --source-image-id ami-0a20d0481c46d5b4b --source-region us-east-1 --region us-west-2 --name "udacity-huiren"
-#ami-07cfa214cfed28335
+#ami-0418070344eccebfc
 
 aws s3api create-bucket --bucket terraform-tf-huiren --region us-east-2 --create-bucket-configuration LocationConstraint=us-east-2
 aws s3api create-bucket --bucket udacity-tf-huiren-west --region us-west-2 --create-bucket-configuration LocationConstraint=us-west-2
