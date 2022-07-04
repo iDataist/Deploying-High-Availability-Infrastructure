@@ -9,7 +9,6 @@
 
 resource "aws_instance" "ubuntu" {
   ami           = var.aws_ami
-  count = var.instance_count
   instance_type = "t3.micro"
   key_name = "udacity"
   for_each   = toset(var.public_subnet_ids)
