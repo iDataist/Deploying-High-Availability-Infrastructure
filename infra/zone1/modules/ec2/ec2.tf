@@ -2,7 +2,7 @@ resource "aws_instance" "ubuntu" {
   ami           = var.aws_ami
   instance_type = "t3.micro"
   key_name = "udacity"
-  for_each   = var.public_subnet_ids
+  for_each   = toset(var.public_subnet_ids)
   subnet_id = each.value
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
