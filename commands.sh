@@ -1,5 +1,3 @@
-https://docs.google.com/document/d/1BTIbtQgzMxtnUbfYrrgnYt8RA9_zZLDNSTUDPh2Lt7k/edit?usp=sharing
-
 # sed -i 's/us-east-2/us-east-2/g' _config.tf
 # find ./ -type f -exec sed -i -e 's/udacity-tf-tscotto/udacity-tf-huiren/g' {} \;
 
@@ -54,4 +52,8 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 helm install prometheus prometheus-community/kube-prometheus-stack -f "values.yaml" --namespace monitoring
 
 # kubectl delete all --all -n monitoring
+# aws ec2 terminate-instances --instance-ids "i-022a93fc9171edff0"
+# aws rds promote-read-replica-db-cluster --db-cluster-identifier udacity-db-cluster-s
+# aws rds delete-db-cluster --db-cluster-identifier udacity-db-cluster-s --skip-final-snapshot
+# aws ec2 delete-snapshot --snapshot-id snap-006798184d59d59d0
 
