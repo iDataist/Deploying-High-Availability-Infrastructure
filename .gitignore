@@ -1,2 +1,7 @@
 infra/zone1/udacity.pem
 infra/zone2/udacity.pem
+infra/.DS_Store
+infra/zone1/.DS_Store
+infra/zone2/.DS_Store
+infra/.DS_Store
+.DS_Store
