@@ -10,7 +10,7 @@ resource "kubernetes_namespace" "udacity" {
   resource "kubernetes_service" "grafana-external" {
   metadata {
     name      = "grafana-external"
-    namespace = "monitoring-west"
+    namespace = "monitoring"
     annotations = {
       "service.beta.kubernetes.io/aws-load-balancer-type"            = "nlb"
       "service.beta.kubernetes.io/aws-load-balancer-nlb-target-type" = "ip"
