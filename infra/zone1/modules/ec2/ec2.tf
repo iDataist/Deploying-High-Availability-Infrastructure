@@ -3,8 +3,8 @@ resource "aws_instance" "ubuntu" {
   count = var.instance_count
   instance_type = "t3.micro"
   key_name = "udacity"
-  for_each   = toset(var.public_subnet_ids)
-  subnet_id = each.key
+  for_each   = var.public_subnet_ids
+  subnet_id = each.value
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
   tags = {
