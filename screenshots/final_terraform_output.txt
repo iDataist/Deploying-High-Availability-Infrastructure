@@ -1,0 +1,159 @@
+[cloudshell-user@ip-10-0-30-142 zone1]$ terraform apply
+module.vpc_west.aws_eip.nat[0]: Refreshing state... [id=eipalloc-0543a9fe929d28407]
+module.vpc_west.aws_vpc.this: Refreshing state... [id=vpc-09dfdf7efa97b5274]
+module.project_rds_s.aws_rds_cluster_parameter_group.cluster_pg-s: Refreshing state... [id=udacity-pg-s]
+module.vpc.aws_vpc.this: Refreshing state... [id=vpc-04ef160c31b9c86c5]
+module.vpc.aws_eip.nat[0]: Refreshing state... [id=eipalloc-025e42d9b6961ae33]
+module.project_rds_p.aws_rds_cluster_parameter_group.cluster_pg: Refreshing state... [id=udacity-pg-p]
+module.vpc.aws_subnet.private[0]: Refreshing state... [id=subnet-0da92a50d3b837562]
+module.vpc.aws_subnet.private[1]: Refreshing state... [id=subnet-029395c9ba91620a7]
+module.vpc.aws_subnet.private[2]: Refreshing state... [id=subnet-03df7aafbdd764dbd]
+module.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-01fe3c7ea05c43fd1]
+module.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-0229077627084c6e6]
+module.vpc.aws_subnet.public[2]: Refreshing state... [id=subnet-08592069f6cfb2c68]
+module.vpc.aws_route_table.private[2]: Refreshing state... [id=rtb-095cbf96c17c4141f]
+module.project_ec2.aws_security_group.ec2_sg: Refreshing state... [id=sg-042742fafc13c9fac]
+module.vpc.aws_route_table.public[0]: Refreshing state... [id=rtb-03dec1061d6111dbe]
+module.vpc.aws_route_table.private[0]: Refreshing state... [id=rtb-07110b89d0affd052]
+module.vpc.aws_route_table.private[1]: Refreshing state... [id=rtb-0bf122bdcc78c7383]
+module.vpc.aws_internet_gateway.this[0]: Refreshing state... [id=igw-01d9a30be19316233]
+module.project_alb.aws_lb_target_group.udacity: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-2:376940003530:targetgroup/udacity-lb-tg/90e656226ef5984b]
+module.project_rds_p.aws_security_group.db_sg_1: Refreshing state... [id=sg-0bcb95669fc50973e]
+module.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-06ee15b2335726186]
+module.vpc.aws_route_table_association.public[2]: Refreshing state... [id=rtbassoc-08efb02b2cc5c0c24]
+module.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-05dbfc1d9597eb84e]
+module.vpc.aws_route.public_internet_gateway[1]: Refreshing state... [id=r-rtb-03dec1061d6111dbe1080289494]
+module.vpc.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-03dec1061d6111dbe1080289494]
+module.vpc.aws_route.public_internet_gateway[2]: Refreshing state... [id=r-rtb-03dec1061d6111dbe1080289494]
+module.project_ec2.aws_instance.ubuntu[1]: Refreshing state... [id=i-0d518b37f75726f97]
+module.vpc.aws_nat_gateway.this[0]: Refreshing state... [id=nat-089378eedb06410bc]
+module.vpc.aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-0c721d546409b8e14]
+module.project_ec2.aws_instance.ubuntu[2]: Refreshing state... [id=i-0f1156c4494ccb936]
+module.vpc.aws_route_table_association.private[2]: Refreshing state... [id=rtbassoc-026c1c16a81d9c1f6]
+module.project_ec2.aws_instance.ubuntu[0]: Refreshing state... [id=i-095bb6b21b086d2fe]
+module.vpc.aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-0361aa2cea7f0e6e7]
+module.project_rds_p.aws_db_subnet_group.udacity_db_subnet_group: Refreshing state... [id=udacity_db_subnet_group]
+module.project_alb.aws_lb.udacity: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-2:376940003530:loadbalancer/app/udacity-lb-tf/e82ead525ba7fd9f]
+module.vpc.aws_route.private_nat_gateway[0]: Refreshing state... [id=r-rtb-07110b89d0affd0521080289494]
+module.vpc.aws_route.private_nat_gateway[1]: Refreshing state... [id=r-rtb-0bf122bdcc78c73831080289494]
+module.vpc.aws_route.private_nat_gateway[2]: Refreshing state... [id=r-rtb-095cbf96c17c4141f1080289494]
+module.project_eks.aws_iam_policy.eks_cluster_role_cloudwatch_policy: Refreshing state... [id=arn:aws:iam::376940003530:policy/app-udacity-eks-cluster-role-cloudwatch-policy]
+module.project_eks.aws_security_group.eks-cluster: Refreshing state... [id=sg-06c8b1f62a380a921]
+module.project_eks.aws_iam_policy.eks_node_instance_policy: Refreshing state... [id=arn:aws:iam::376940003530:policy/app-udacity-instance-policy]
+module.project_eks.aws_iam_role.eks_node_cluster_role: Refreshing state... [id=app-udacity-eks-node-role]
+module.project_eks.aws_iam_role.eks_cluster_role: Refreshing state... [id=app-udacity-eks-cluster-role]
+module.project_rds_p.aws_rds_cluster.udacity_cluster: Refreshing state... [id=udacity-db-cluster]
+module.project_alb.aws_lb_listener.udacity: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-2:376940003530:listener/app/udacity-lb-tf/e82ead525ba7fd9f/e76ae06d5ee43d35]
+module.vpc_west.aws_route_table.private[1]: Refreshing state... [id=rtb-03e0f6cc8726c75e2]
+module.vpc_west.aws_route_table.private[2]: Refreshing state... [id=rtb-04987ebc03251b51c]
+module.vpc_west.aws_route_table.private[0]: Refreshing state... [id=rtb-0eab00817cabe86c6]
+module.vpc_west.aws_internet_gateway.this[0]: Refreshing state... [id=igw-08a17c6b469a8d181]
+module.vpc_west.aws_route_table.public[0]: Refreshing state... [id=rtb-03e738f2f69c164c9]
+module.vpc_west.aws_subnet.public[0]: Refreshing state... [id=subnet-0fb0c096108f8941a]
+module.vpc_west.aws_subnet.private[0]: Refreshing state... [id=subnet-0cc427d914494b14b]
+module.vpc_west.aws_subnet.private[1]: Refreshing state... [id=subnet-023be08f85acbd331]
+module.vpc_west.aws_subnet.private[2]: Refreshing state... [id=subnet-0e29b39c36663b4d1]
+module.vpc_west.aws_subnet.public[1]: Refreshing state... [id=subnet-0896aadce49423611]
+module.vpc_west.aws_subnet.public[2]: Refreshing state... [id=subnet-072df5d26bd296e96]
+module.project_rds_s.aws_security_group.db_sg_2: Refreshing state... [id=sg-07c58732684a6db59]
+module.vpc_west.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-03e738f2f69c164c91080289494]
+module.project_rds_p.aws_rds_cluster_instance.udacity_instance[1]: Refreshing state... [id=udacity-db-instance-1]
+module.vpc_west.aws_route.public_internet_gateway[1]: Refreshing state... [id=r-rtb-03e738f2f69c164c91080289494]
+module.project_rds_p.aws_rds_cluster_instance.udacity_instance[0]: Refreshing state... [id=udacity-db-instance-0]
+module.vpc_west.aws_route.public_internet_gateway[2]: Refreshing state... [id=r-rtb-03e738f2f69c164c91080289494]
+module.project_eks.aws_iam_role_policy_attachment.node_AmazonEC2ContainerRegistryReadOnly: Refreshing state... [id=app-udacity-eks-node-role-20220704131835977200000005]
+module.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSCloudwatchPolicy: Refreshing state... [id=app-udacity-eks-node-role-20220704131835959700000003]
+module.project_eks.aws_iam_role_policy_attachment.node_harmony_policy_attachment: Refreshing state... [id=app-udacity-eks-node-role-20220704131836014700000007]
+module.project_eks.aws_iam_role_policy_attachment.node_AmazonEKS_CNI_Policy: Refreshing state... [id=app-udacity-eks-node-role-20220704131836015600000008]
+module.project_eks.aws_iam_role_policy_attachment.node_AmazonEKSWorkerNodePolicy: Refreshing state... [id=app-udacity-eks-node-role-20220704131835983900000006]
+module.project_eks.aws_iam_role_policy_attachment.node_CloudWatchAgentServerPolicy: Refreshing state... [id=app-udacity-eks-node-role-20220704131835964100000004]
+module.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSClusterPolicy: Refreshing state... [id=app-udacity-eks-cluster-role-20220704131836046100000009]
+module.vpc_west.aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-0cb9533e731b915e5]
+module.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSServicePolicy: Refreshing state... [id=app-udacity-eks-cluster-role-2022070413183609040000000a]
+module.vpc_west.aws_route_table_association.private[2]: Refreshing state... [id=rtbassoc-0e29ddfd36dd78601]
+module.vpc_west.aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-06bf9083b33c61923]
+module.vpc_west.aws_nat_gateway.this[0]: Refreshing state... [id=nat-0d1be936dbf02f9de]
+module.vpc_west.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-0fab1cef5e7838174]
+module.vpc_west.aws_route_table_association.public[2]: Refreshing state... [id=rtbassoc-0f8f5ac8d89f73b3a]
+module.vpc_west.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-05264e752f8758b0e]
+module.project_eks.aws_eks_cluster.cluster: Refreshing state... [id=udacity-cluster]
+module.project_rds_s.aws_db_subnet_group.udacity_db_subnet_group: Refreshing state... [id=udacity_db_subnet_group]
+module.project_alb.aws_lb_target_group_attachment.udacity[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-2:376940003530:targetgroup/udacity-lb-tg/90e656226ef5984b-20220704131652435600000002]
+module.project_alb.aws_lb_target_group_attachment.udacity[1]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-2:376940003530:targetgroup/udacity-lb-tg/90e656226ef5984b-20220704131652414700000001]
+module.vpc_west.aws_route.private_nat_gateway[0]: Refreshing state... [id=r-rtb-0eab00817cabe86c61080289494]
+module.vpc_west.aws_route.private_nat_gateway[1]: Refreshing state... [id=r-rtb-03e0f6cc8726c75e21080289494]
+module.vpc_west.aws_route.private_nat_gateway[2]: Refreshing state... [id=r-rtb-04987ebc03251b51c1080289494]
+module.project_eks.aws_eks_node_group.node: Refreshing state... [id=udacity-cluster:app-udacity-node-group]
+module.project_rds_s.aws_rds_cluster.udacity_cluster-s: Refreshing state... [id=udacity-db-cluster-s]
+module.project_rds_s.aws_rds_cluster_instance.udacity_instance-s[0]: Refreshing state... [id=udacity-db-instance-0-s]
+module.project_rds_s.aws_rds_cluster_instance.udacity_instance-s[1]: Refreshing state... [id=udacity-db-instance-1-s]
+kubernetes_namespace.udacity: Refreshing state... [id=udacity]
+kubernetes_service.grafana-external: Refreshing state... [id=monitoring/grafana-external]
+
+Note: Objects have changed outside of Terraform
+
+Terraform detected the following changes made outside of Terraform since the last "terraform apply":
+
+  # module.project_rds_s.aws_rds_cluster.udacity_cluster-s has been changed
+  ~ resource "aws_rds_cluster" "udacity_cluster-s" {
+      ~ cluster_members                     = [
+          + "udacity-db-instance-0-s",
+          + "udacity-db-instance-1-s",
+        ]
+      + enabled_cloudwatch_logs_exports     = []
+        id                                  = "udacity-db-cluster-s"
+      + tags                                = {}
+        # (34 unchanged attributes hidden)
+    }
+  # module.project_rds_s.aws_rds_cluster_instance.udacity_instance-s[0] has been changed
+  ~ resource "aws_rds_cluster_instance" "udacity_instance-s" {
+        id                                    = "udacity-db-instance-0-s"
+      + tags                                  = {}
+        # (26 unchanged attributes hidden)
+    }
+  # module.project_rds_s.aws_rds_cluster_instance.udacity_instance-s[1] has been changed
+  ~ resource "aws_rds_cluster_instance" "udacity_instance-s" {
+        id                                    = "udacity-db-instance-1-s"
+      + tags                                  = {}
+        # (26 unchanged attributes hidden)
+    }
+
+Unless you have made equivalent changes to your configuration, or ignored the relevant attributes using ignore_changes, the following plan may include actions to undo or respond to these changes.
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+No changes. Your infrastructure matches the configuration.
+
+Your configuration already matches the changes detected above. If you'd like to update the Terraform state to match, create and apply a refresh-only plan:
+  terraform apply -refresh-only
+╷
+│ Warning: Provider aws is undefined
+│ 
+│   on main.tf line 41, in module "vpc_west":
+│   41:     aws = aws.usw2
+│ 
+│ Module module.vpc_west does not declare a provider named aws.
+│ If you wish to specify a provider configuration for the module, add an entry for aws in the required_providers block within the module.
+│ 
+│ (and one more similar warning elsewhere)
+╵
+
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+account_id = "376940003530"
+caller_arn = "arn:aws:iam::376940003530:user/admin"
+caller_user = "AIDAVPQ3AADFGZJXNUUSP"
+private_subnet_ids = [
+  "subnet-0cc427d914494b14b",
+  "subnet-023be08f85acbd331",
+  "subnet-0e29b39c36663b4d1",
+]
+public_subnet_ids = [
+  "subnet-0fb0c096108f8941a",
+  "subnet-0896aadce49423611",
+  "subnet-072df5d26bd296e96",
+]
+vpc_id = "vpc-09dfdf7efa97b5274"
+[cloudshell-user@ip-10-0-30-142 zone1]$ 

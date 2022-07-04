@@ -39,7 +39,7 @@ mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/
 echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 
 
-aws eks update-kubeconfig --name udacity-cluster #--region us-east-2
+aws eks update-kubeconfig --name udacity-cluster --region us-west-2
 #Change kubernetes context to the new AWS cluster
 kubectl config current-context
 # kubectl config use-context docker-desktop
