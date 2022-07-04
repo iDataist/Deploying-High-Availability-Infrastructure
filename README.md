@@ -112,10 +112,11 @@ sudo systemctl restart nginx
     Change directories to your project directory `cd ../..`
 
     `kubectl create secret generic additional-scrape-configs --from-file=prometheus-additional.yaml --namespace monitoring`
-
+    <!-- `kubectl delete secret generic additional-scrape-configs --namespace monitoring` -->
     `helm repo add prometheus-community https://prometheus-community.github.io/helm-charts`
 
     `helm install prometheus prometheus-community/kube-prometheus-stack -f "values.yaml" --namespace monitoring`
+    <!-- `helm uninstall prometheus prometheus-community/kube-prometheus-stack --namespace monitoring` -->
 
 
 <!-- 10. Port forward
