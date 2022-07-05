@@ -13,7 +13,7 @@ aws ec2 copy-image --source-image-id ami-0a20d0481c46d5b4b --source-region us-ea
 
 aws s3api create-bucket --bucket terraform-tf-huiren --region us-east-2 --create-bucket-configuration LocationConstraint=us-east-2
 aws s3api create-bucket --bucket udacity-tf-huiren-west --region us-west-1 --create-bucket-configuration LocationConstraint=us-west-1
-aws s3 rm s3://udacity-tf-huiren --recursive
+aws s3 rm s3://udacity-tf-huiren-west --recursive
 aws s3api delete-bucket --bucket udacity-tf-huiren-west
 
 aws ec2 create-key-pair --key-name udacity --region us-east-2
@@ -53,7 +53,9 @@ helm install prometheus prometheus-community/kube-prometheus-stack -f "values.ya
 
 # kubectl delete all --all -n monitoring
 # aws ec2 terminate-instances --instance-ids "i-022a93fc9171edff0"
-# aws rds promote-read-replica-db-cluster --db-cluster-identifier udacity-db-cluster-s
+# aws rds promote-read-replica-db-cluster --db-cluster-identifier udacity-db-cluster-s --region us-west-1
 # aws rds delete-db-cluster --db-cluster-identifier udacity-db-cluster-s --skip-final-snapshot
 # aws ec2 delete-snapshot --snapshot-id snap-006798184d59d59d0
-
+# eksctl delete cluster --name udacity-cluster
+# terraform state list
+# terraform state rm module.eks
