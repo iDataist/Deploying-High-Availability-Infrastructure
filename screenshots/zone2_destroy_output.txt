@@ -1,0 +1,105 @@
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+kubernetes_service.grafana-external: Destroying... [id=monitoring/grafana-external]
+kubernetes_namespace.udacity: Destroying... [id=udacity]
+module.project_alb.aws_lb_target_group_attachment.udacity[0]: Destroying... [id=arn:aws:elasticloadbalancing:us-west-1:376940003530:targetgroup/udacity-lb-tg/e3c098889d3d5a2d-20220704230710531500000002]
+module.project_alb.aws_lb_target_group_attachment.udacity[1]: Destroying... [id=arn:aws:elasticloadbalancing:us-west-1:376940003530:targetgroup/udacity-lb-tg/e3c098889d3d5a2d-20220704230710452000000001]
+module.project_alb.aws_lb_listener.udacity: Destroying... [id=arn:aws:elasticloadbalancing:us-west-1:376940003530:listener/app/udacity-lb-tf/094fcabb4129cc13/039a66fb7a3881bf]
+module.project_alb.aws_lb_target_group_attachment.udacity[0]: Destruction complete after 0s
+module.project_alb.aws_lb_listener.udacity: Destruction complete after 0s
+module.project_alb.aws_lb.udacity: Destroying... [id=arn:aws:elasticloadbalancing:us-west-1:376940003530:loadbalancer/app/udacity-lb-tf/094fcabb4129cc13]
+module.project_alb.aws_lb_target_group_attachment.udacity[1]: Destruction complete after 0s
+module.project_alb.aws_lb_target_group.udacity: Destroying... [id=arn:aws:elasticloadbalancing:us-west-1:376940003530:targetgroup/udacity-lb-tg/e3c098889d3d5a2d]
+module.project_ec2.aws_instance.ubuntu[0]: Destroying... [id=i-0faaeaeee894d5ffc]
+module.project_ec2.aws_instance.ubuntu[2]: Destroying... [id=i-03bacb53b488ba5a2]
+module.project_ec2.aws_instance.ubuntu[1]: Destroying... [id=i-0cd721a4e2697bef8]
+module.project_alb.aws_lb_target_group.udacity: Destruction complete after 0s
+kubernetes_service.grafana-external: Destruction complete after 2s
+module.project_alb.aws_lb.udacity: Destruction complete after 2s
+kubernetes_namespace.udacity: Destruction complete after 7s
+module.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSCloudwatchPolicy: Destroying... [id=app-udacity-eks-node-role-20220704225106787300000001]
+module.project_eks.aws_iam_role_policy_attachment.node_CloudWatchAgentServerPolicy: Destroying... [id=app-udacity-eks-node-role-20220704225106790900000003]
+module.project_eks.aws_eks_node_group.node: Destroying... [id=udacity-cluster:app-udacity-node-group]
+module.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSCloudwatchPolicy: Destruction complete after 0s
+module.project_eks.aws_iam_role_policy_attachment.node_CloudWatchAgentServerPolicy: Destruction complete after 0s
+module.project_ec2.aws_instance.ubuntu[2]: Still destroying... [id=i-03bacb53b488ba5a2, 10s elapsed]
+module.project_ec2.aws_instance.ubuntu[0]: Still destroying... [id=i-0faaeaeee894d5ffc, 10s elapsed]
+module.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0cd721a4e2697bef8, 10s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 10s elapsed]
+module.project_ec2.aws_instance.ubuntu[2]: Still destroying... [id=i-03bacb53b488ba5a2, 20s elapsed]
+module.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0cd721a4e2697bef8, 20s elapsed]
+module.project_ec2.aws_instance.ubuntu[0]: Still destroying... [id=i-0faaeaeee894d5ffc, 20s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 20s elapsed]
+module.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0cd721a4e2697bef8, 30s elapsed]
+module.project_ec2.aws_instance.ubuntu[2]: Still destroying... [id=i-03bacb53b488ba5a2, 30s elapsed]
+module.project_ec2.aws_instance.ubuntu[0]: Still destroying... [id=i-0faaeaeee894d5ffc, 30s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 30s elapsed]
+module.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0cd721a4e2697bef8, 40s elapsed]
+module.project_ec2.aws_instance.ubuntu[0]: Still destroying... [id=i-0faaeaeee894d5ffc, 40s elapsed]
+module.project_ec2.aws_instance.ubuntu[2]: Still destroying... [id=i-03bacb53b488ba5a2, 40s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 40s elapsed]
+module.project_ec2.aws_instance.ubuntu[2]: Still destroying... [id=i-03bacb53b488ba5a2, 50s elapsed]
+module.project_ec2.aws_instance.ubuntu[0]: Still destroying... [id=i-0faaeaeee894d5ffc, 50s elapsed]
+module.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0cd721a4e2697bef8, 50s elapsed]
+module.project_ec2.aws_instance.ubuntu[2]: Destruction complete after 51s
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 50s elapsed]
+module.project_ec2.aws_instance.ubuntu[0]: Still destroying... [id=i-0faaeaeee894d5ffc, 1m0s elapsed]
+module.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0cd721a4e2697bef8, 1m0s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 1m0s elapsed]
+module.project_ec2.aws_instance.ubuntu[0]: Still destroying... [id=i-0faaeaeee894d5ffc, 1m10s elapsed]
+module.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0cd721a4e2697bef8, 1m10s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 1m10s elapsed]
+module.project_ec2.aws_instance.ubuntu[0]: Still destroying... [id=i-0faaeaeee894d5ffc, 1m20s elapsed]
+module.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0cd721a4e2697bef8, 1m20s elapsed]
+module.project_ec2.aws_instance.ubuntu[1]: Destruction complete after 1m21s
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 1m20s elapsed]
+module.project_ec2.aws_instance.ubuntu[0]: Still destroying... [id=i-0faaeaeee894d5ffc, 1m30s elapsed]
+module.project_ec2.aws_instance.ubuntu[0]: Destruction complete after 1m32s
+module.project_ec2.aws_security_group.ec2_sg: Destroying... [id=sg-010fe1d9c144268eb]
+module.project_ec2.aws_security_group.ec2_sg: Destruction complete after 0s
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 1m30s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 1m40s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 1m50s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 2m0s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 2m10s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 2m20s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 2m30s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 2m40s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 2m50s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 3m0s elapsed]
+module.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 3m10s elapsed]
+module.project_eks.aws_eks_node_group.node: Destruction complete after 3m18s
+module.project_eks.aws_iam_role_policy_attachment.node_AmazonEKS_CNI_Policy: Destroying... [id=app-udacity-eks-node-role-20220704225106811400000007]
+module.project_eks.aws_iam_role_policy_attachment.node_AmazonEC2ContainerRegistryReadOnly: Destroying... [id=app-udacity-eks-node-role-20220704225106791900000004]
+module.project_eks.aws_iam_role_policy_attachment.node_AmazonEKSWorkerNodePolicy: Destroying... [id=app-udacity-eks-node-role-20220704225106793400000005]
+module.project_eks.aws_iam_role_policy_attachment.node_harmony_policy_attachment: Destroying... [id=app-udacity-eks-node-role-20220704225106863700000008]
+module.project_eks.aws_eks_cluster.cluster: Destroying... [id=udacity-cluster]
+module.project_eks.aws_iam_role_policy_attachment.node_AmazonEKSWorkerNodePolicy: Destruction complete after 0s
+module.project_eks.aws_iam_role_policy_attachment.node_harmony_policy_attachment: Destruction complete after 0s
+module.project_eks.aws_iam_role_policy_attachment.node_AmazonEKS_CNI_Policy: Destruction complete after 0s
+module.project_eks.aws_iam_role_policy_attachment.node_AmazonEC2ContainerRegistryReadOnly: Destruction complete after 0s
+module.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 10s elapsed]
+module.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 20s elapsed]
+module.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 30s elapsed]
+module.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 40s elapsed]
+module.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 50s elapsed]
+module.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 1m0s elapsed]
+module.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 1m10s elapsed]
+module.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 1m20s elapsed]
+module.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 1m30s elapsed]
+module.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 1m40s elapsed]
+module.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 1m50s elapsed]
+module.project_eks.aws_eks_cluster.cluster: Destruction complete after 1m51s
+module.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSClusterPolicy: Destroying... [id=app-udacity-eks-cluster-role-20220704225106790700000002]
+module.project_eks.aws_security_group.eks-cluster: Destroying... [id=sg-0f460943a844badbf]
+module.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSServicePolicy: Destroying... [id=app-udacity-eks-cluster-role-20220704225106798400000006]
+module.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSServicePolicy: Destruction complete after 0s
+module.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSClusterPolicy: Destruction complete after 0s
+module.project_eks.aws_security_group.eks-cluster: Destruction complete after 1s
+
+Destroy complete! Resources: 22 destroyed.
+[cloudshell-user@ip-10-0-35-9 zone2]$ 
